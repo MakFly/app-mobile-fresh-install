@@ -70,6 +70,15 @@ types/                # Global TypeScript types
 config/               # Environment configuration
 ```
 
+## CI/CD
+
+GitHub Actions runs on every push/PR:
+
+- ESLint check
+- TypeScript type check
+
+Status badge: ![CI](https://github.com/MakFly/app-mobile-fresh-install/workflows/CI/badge.svg)
+
 ## Git Hooks
 
 Pre-commit hooks run automatically via Husky + lint-staged:
