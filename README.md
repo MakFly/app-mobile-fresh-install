@@ -32,19 +32,29 @@ bun start
 make tunnel
 ```
 
+## Auto-setup on Clone
+
+The project automatically configures Git hooks after `bun install` thanks to Husky's prepare script.
+
+```bash
+git clone <repo>
+cd app-mobile-fresh-install
+bun install  # Husky hooks are installed automatically
+```
+
 ## Make Commands
 
-| Command | Description |
-|---------|-------------|
-| `make install` | Install dependencies with bun |
-| `make start` | Start Expo dev server |
-| `make tunnel` | Start Expo tunnel mode |
-| `make ios` | Run on iOS simulator |
-| `make android` | Run on Android emulator |
-| `make web` | Run on web browser |
-| `make lint` | Run ESLint + Prettier check |
-| `make type-check` | Run TypeScript type check |
-| `make reset` | Full reset (clean + install) |
+| Command           | Description                   |
+| ----------------- | ----------------------------- |
+| `make install`    | Install dependencies with bun |
+| `make start`      | Start Expo dev server         |
+| `make tunnel`     | Start Expo tunnel mode        |
+| `make ios`        | Run on iOS simulator          |
+| `make android`    | Run on Android emulator       |
+| `make web`        | Run on web browser            |
+| `make lint`       | Run ESLint + Prettier check   |
+| `make type-check` | Run TypeScript type check     |
+| `make reset`      | Full reset (clean + install)  |
 
 ## Project Structure
 
@@ -59,6 +69,15 @@ hooks/                # Shared React hooks
 types/                # Global TypeScript types
 config/               # Environment configuration
 ```
+
+## Git Hooks
+
+Pre-commit hooks run automatically via Husky + lint-staged:
+
+- ESLint with auto-fix
+- Prettier formatting
+
+No bad code gets committed! 🎯
 
 ## Development Guidelines
 
