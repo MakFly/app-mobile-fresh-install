@@ -81,7 +81,7 @@ function TabItem({
       friction: 8,
       tension: 100,
     }).start();
-  }, [isFocused]);
+  }, [bgOpacity, isFocused]);
 
   const onPressIn = () => {
     Animated.spring(scale, {
